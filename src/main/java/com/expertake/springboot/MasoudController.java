@@ -64,8 +64,8 @@ public class MasoudController {
 		}
 		// I could use Gson to build Json with an Entity, but for the task it is
 		// enough..
-		String json = "{\n\"period\":[\"" + startDate + "\",\" " + endDate + "\"]\n";
-		return json + "\"averageLatencies\": [\n" + averageLatenciesJson + "\n]\n}";
+		String json = "{\"period\":[\"" + startDate + "\",\" " + endDate + "\"],";
+		return json + "\"averageLatencies\": [" + averageLatenciesJson + "]}";
 
 	}
 
@@ -111,7 +111,11 @@ public class MasoudController {
 		try {
 			MasoudController contrloer = new MasoudController();
 			Map<Integer, AverageLatencies> map = new HashMap<Integer, AverageLatencies>();
-			System.out.println(contrloer.getLatency("2021-01-01", "2021-01-01", map));
+			long timeStart=System.currentTimeMillis();
+			System.out.println(contrloer.getLatency("2021-01-01", "2021-12-02", map));
+			long timeFinish=System.currentTimeMillis();
+			System.out.println("execution time i miliSec "+(timeFinish-timeStart));
+			
 		} catch (Exception e) {
 			System.out.println(e);
 		}

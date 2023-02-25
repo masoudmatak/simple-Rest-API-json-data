@@ -18,6 +18,6 @@ public class MasoudControllerIT {
     @Test
     public void getMasoud() throws Exception {
         ResponseEntity<String> response = template.getForEntity("/", String.class);
-      assertThat(response.getBody()).isEqualTo("Greetings from Spring Boot!");
+      assertThat(response.getBody()).isEqualTo("you are invoking Masoud's server on Azure");
     }
 }
