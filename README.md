@@ -1,8 +1,9 @@
 # simple-Rest-API-json-data
 
-Java 17 has tested
-compile 
-mvn clean install..
+Java 17 has tested \n
+
+compile \n
+mvn clean install..\n
 run local
 mvn spring-boot:run
 
